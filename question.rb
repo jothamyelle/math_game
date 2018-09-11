@@ -1,10 +1,8 @@
 class Question
 
-  def initialize(twoNumbers)
-    num1 = twoNumbers[0].to_i
-    num2 = twoNumbers[1].to_i
-    @question = "What does #{num1} plus #{num2} equal?"
-    @answer = num1 + num2
+  def initialize(num1, num2)
+    @question = "What does #{num1.to_i} plus #{num2.to_i} equal?"
+    @answer = num1.to_i + num2.to_i
   end
   
   attr_reader :question

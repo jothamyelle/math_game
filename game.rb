@@ -13,10 +13,12 @@ class Game
   def run_game
     while(@inProgress) do
       puts "#{@currentGuesser.name}'s turn to guess."
-      puts "#{@currentAsker.name}, enter two numbers between 1 and 20, without spaces (ie. (5 and 4) would be 54):"
-      print "> "
-      userInput = gets.chomp
-      question = Question.new(userInput)
+      puts "#{@currentAsker.name}, enter two numbers between 1 and 20:"
+      print "First Number > "
+      num1 = gets.chomp
+      print "Second Number > "
+      num2 = gets.chomp
+      question = Question.new(num1, num2)
       display_question(question)
       player_answer = get_player_answer
       correct = (player_answer == question.answer)
